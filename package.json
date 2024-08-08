@@ -1,0 +1,12 @@
+{
+  "name": "diya013",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  },
+  "scripts": {
+    "tsc": "rm -rf build/ && tsc -w"
+  }
+}
