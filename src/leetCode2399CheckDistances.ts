@@ -1,30 +1,13 @@
 function checkDistances(s: string, distance: number[]): boolean {
-  //Pertama kita buatkan aray pembanding untuk distance
-  let postion: number[] = [];
+  let postion: number[] = Array(26).fill(-1);
   let alphabet = "abcdefghijklmnopqrstuvwxyz";
-  for (let i = 0; i < alphabet.length; i++) {
-    postion.push(-1);
-  }
-  //kita ambil index sesuai alphabet
+
   for (let i = 0; i < s.length; i++) {
-    let alphabetIdx = -1;
-    for (let j = 0; j < alphabet.length; j++) {
-      if (s[i] === alphabet[j]) {
-        alphabetIdx = j;
-        break;
-      }
-    }
-    // simpan posisi dan hitung jaraknya
+    let alphabetIdx = alphabet.indexOf(s[i]);
     if (postion[alphabetIdx] === -1) {
       postion[alphabetIdx] = i;
-    } else {
-      let totalDistance = i - postion[alphabetIdx] - 1;
-
-      //terakhir compare apakah jaraknya sama dengan distance
-      //   console.log(postion);
-      if (totalDistance !== distance[alphabetIdx]) {
-        return false;
-      }
+    } else if (i - postion[alphabetIdx] - 1 !== distance[alphabetIdx]) {
+      return false;
     }
   }
   return true;
