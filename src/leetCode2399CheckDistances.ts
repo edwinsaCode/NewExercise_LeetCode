@@ -4,6 +4,7 @@ function checkDistances(s: string, distance: number[]): boolean {
 
   for (let i = 0; i < s.length; i++) {
     let alphabetIdx = alphabet.indexOf(s[i]);
+    console.log(alphabetIdx);
     if (postion[alphabetIdx] === -1) {
       postion[alphabetIdx] = i;
     } else if (i - postion[alphabetIdx] - 1 !== distance[alphabetIdx]) {
@@ -13,7 +14,7 @@ function checkDistances(s: string, distance: number[]): boolean {
   return true;
 }
 
-let s = "aa",
+let s = "abaccb",
   distance = [
     1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0,
