@@ -10,6 +10,5 @@ function hIndex(citations: number[]): number {
   }
   return h;
 }
-// let citations = [1, 2, 100];
 let citations = [0, 1, 3, 5, 6];
 console.log(hIndex(citations));
